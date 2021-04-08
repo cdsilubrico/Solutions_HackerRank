@@ -1,3 +1,4 @@
+import java.util.LinkedHashSet;
 import java.util.List;
 
 public class Solutions {
@@ -54,6 +55,22 @@ public class Solutions {
 
         return answer;
     }
+
+    static int sockMerchant(int n, int[] ar) {
+        int totalPairs = 0;
+
+        LinkedHashSet<Integer> noMatch = new LinkedHashSet<>();
+        for (int j : ar) {
+            if (!noMatch.add(j)) {
+                noMatch.remove(j);
+                totalPairs++;
+            }
+        }
+
+        return totalPairs;
+    }
+
+
 
 
 
