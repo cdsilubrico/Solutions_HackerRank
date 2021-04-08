@@ -18,7 +18,8 @@ public class Main {
         //plusMinus(ar3);
         //staircase(6);
         //miniMaxSum(ar2);
-        System.out.println(Solutions.birthdayCakeCandles(l1));
+        //System.out.println(Solutions.birthdayCakeCandles(l1));
+        //System.out.println(Solutions.timeConversion("12:45:54PM"));
     }
 
 
