@@ -172,6 +172,37 @@ public class Solutions {
         System.out.println(zero / len);
     }
 
+    static void miniMaxSum(int[] arr) {
+
+        long max;
+        long min;
+
+        min = max = 0;
+
+        long highestV = Integer.MAX_VALUE;
+        long lowestV = Integer.MIN_VALUE;
+        int len = arr.length;
+
+        for (int i = 0; i < len; i++) {
+
+            if (arr[i] > lowestV) {
+                lowestV = arr[i];
+            }
+
+            if (arr[i] < highestV) {
+                highestV = arr[i];
+            }
+
+            max += arr[i];
+            min += arr[i];
+
+        }
+
+        max -= lowestV;
+        min -= highestV;
+
+        System.out.print(max + " " + min);
+    }
 
 
 
