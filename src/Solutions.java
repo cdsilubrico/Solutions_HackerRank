@@ -146,6 +146,32 @@ public class Solutions {
 
     }
 
+    static void plusMinus(int[] arr) {
+
+        double positive;
+        double negative;
+        double zero;
+
+        positive = negative = zero = 0;
+
+        double len = arr.length;
+
+        for (int i = 0; i < len; i++) {
+
+            if (arr[i] >= 1) {
+                positive++;
+            } else if (arr[i] <= -1) {
+                negative++;
+            } else if (arr[i] == 0) {
+                zero++;
+            }
+        }
+
+        System.out.println(positive / len);
+        System.out.println(negative / len);
+        System.out.println(zero / len);
+    }
+
 
 
 
