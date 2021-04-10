@@ -126,6 +126,27 @@ public class Solutions {
         return reverse;
     }
 
+    static long repeatedString(String s, long n) {
+
+        long occurence = 0;
+        String infinite = "";
+        char check;
+
+        for (int i = 0; i < n + 1; i++) {
+            infinite = infinite + s;
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == 'a') {
+                occurence++;
+            }
+        }
+
+        return occurence;
+
+    }
+
+
 
 
 
