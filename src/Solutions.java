@@ -89,6 +89,27 @@ public class Solutions {
 
     }
 
+    static int secondMinimum(int[] ar) {
+
+        int min;
+        int secondMin;
+        int len = ar.length;
+
+        min = secondMin = Integer.MAX_VALUE;
+
+        for (int i = 0; i < len; i++) {
+
+            if (ar[i] < min) {
+                secondMin = min;
+                min = ar[i];
+            } else if (ar[i] < secondMin && ar[i] != min) {
+                secondMin = ar[i];
+            }
+        }
+
+        return secondMin;
+    }
+
 
 
 
