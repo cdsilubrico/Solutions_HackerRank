@@ -110,6 +110,22 @@ public class Solutions {
         return secondMin;
     }
 
+    static int[] reverseArray(int[] a) {
+
+        int len = a.length;
+        int ctr = 0;
+
+        int reverse[] = new int[len];
+
+        while (len != 0) {
+            reverse[ctr] = a[len - 1];
+            ctr++;
+            len--;
+        }
+
+        return reverse;
+    }
+
 
 
 
