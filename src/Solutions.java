@@ -204,6 +204,34 @@ public class Solutions {
         System.out.print(max + " " + min);
     }
 
+    static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+        int appleCount = 0;
+        int orangeCount = 0;
+        int aLen = apples.length;
+        int oLen = oranges.length;
+
+        for(int i = 0; i < aLen;i++)
+        {
+            if(apples[i]+a >= s && apples[i]+a <= t)
+            {
+                appleCount++;
+            }
+        }
+
+        for(int j = 0; j < oLen;j++)
+        {
+            if(oranges[j]+b >= s && oranges[j]+b <= t)
+            {
+                orangeCount++;
+            }
+        }
+        System.out.println(appleCount);
+        System.out.println(orangeCount);
+    }
+
+
+
+
 
 
 
