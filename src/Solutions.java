@@ -257,6 +257,18 @@ public class Solutions {
         return answer;
     }
 
+    static long aVeryBigSum(long[] ar) {
+        long max = 0;
+
+        for (int i = 0; i < ar.length; i++) {
+            max += ar[i];
+
+        }
+
+        return max;
+    }
+
+
 
 
 
