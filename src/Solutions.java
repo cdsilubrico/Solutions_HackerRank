@@ -310,6 +310,22 @@ public class Solutions {
         return nValleys;
     }
 
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        int difference;
+        int leftDiagSum = 0;
+        int rightDiagSum = 0;
+        int len = arr.size();
+
+        for (int i = 0; i < len; i++) {
+            leftDiagSum += arr.get(i).get(i);
+            rightDiagSum += arr.get(i).get(len - 1 - i);
+
+        }
+        difference = Math.abs(leftDiagSum - rightDiagSum);
+
+        return difference;
+    }
+
 
 
 
