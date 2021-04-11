@@ -291,6 +291,25 @@ public class Solutions {
         return ans;
     }
 
+    public static int countingValleys(int steps, String path) {
+
+        int nValleys = 0;
+        int seaLvl = 0;
+
+        for (int i = 0; i < steps; i++) {
+            if (path.charAt(i) == 'U') {
+                seaLvl++;
+            } else if (path.charAt(i) == 'D') {
+                seaLvl--;
+                if (seaLvl == -1) {
+                    nValleys++;
+                }
+            }
+        }
+
+        return nValleys;
+    }
+
 
 
 
