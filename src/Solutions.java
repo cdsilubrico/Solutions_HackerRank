@@ -326,6 +326,23 @@ public class Solutions {
         return difference;
     }
 
+    public static List<Integer> gradingStudents(List<Integer> grades) {
+        int checker;
+        final int multiple = 5;
+
+        for (int i = 0; i < grades.size(); i++) {
+            if (grades.get(i) % multiple != 0) {
+                checker = grades.get(i) % multiple;
+
+                if (multiple - checker < 3 && grades.get(i) > 37) {
+                    grades.set(i, grades.get(i) + (multiple - checker));
+                }
+            }
+        }
+
+        return grades;
+    }
+
 
 
 
