@@ -364,6 +364,25 @@ public class Solutions {
         return maxSum;
     }
 
+    static int jumpingOnClouds(int[] c) {
+
+        int min = 0;
+        int cumulus = 0;
+        int cLen = c.length;
+
+        while (cumulus < cLen - 1) {
+            if ((cumulus + 2 < cLen) && c[cumulus + 2] == 0) {
+                cumulus += 2;
+            } else {
+                cumulus++;
+            }
+
+            min++;
+        }
+
+        return min;
+    }
+
 
 
 
