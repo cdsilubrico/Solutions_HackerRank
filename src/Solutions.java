@@ -343,6 +343,26 @@ public class Solutions {
         return grades;
     }
 
+    static int hourglassSum(int[][] arr) {
+        int maxSum = Integer.MIN_VALUE;
+        int len = arr.length;
+        int currSum = 0;
+
+        for (int i = 0; i <= len - 3; i++) {
+            for (int j = 0; j <= len - 3; j++) {
+                currSum = arr[i][j] + arr[i][j + 1] + arr[i][j + 2]
+                        + arr[i + 1][j + 1]
+                        + arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2];
+
+                if (currSum > maxSum) {
+                    maxSum = currSum;
+                }
+
+            }
+        }
+
+        return maxSum;
+    }
 
 
 
