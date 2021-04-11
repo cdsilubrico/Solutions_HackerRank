@@ -229,6 +229,36 @@ public class Solutions {
         System.out.println(orangeCount);
     }
 
+    static String kangaroo(int x1, int v1, int x2, int v2) {
+        String answer = "";
+
+        if(x2>x1 && v2>v1)
+        {
+            answer = "NO";
+        }
+        else
+        {
+            while(x2>x1)
+            {
+                x2=x2+v2;
+                x1=x1+v1;
+                if (x1==x2)
+                {
+                    answer = "YES";
+                }
+
+                if(x1>x2)
+                {
+                    answer = "NO";
+                }
+            }
+        }
+
+        return answer;
+    }
+
+
+
 
 
 
