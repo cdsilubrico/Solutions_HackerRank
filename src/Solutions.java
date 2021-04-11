@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -266,6 +267,28 @@ public class Solutions {
         }
 
         return max;
+    }
+
+    static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+
+        ArrayList<Integer> ans = new ArrayList<>();
+        int a1 = 0;
+        int b1 = 0;
+
+        for (int i = 0; i < a.size(); i++) {
+            if (a.get(i) > b.get(i)) {
+                a1++;
+            } else if (a.get(i) < b.get(i)) {
+                b1++;
+            } else {
+                break;
+            }
+        }
+
+        ans.add(a1);
+        ans.add(b1);
+
+        return ans;
     }
 
 
