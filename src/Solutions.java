@@ -383,6 +383,51 @@ public class Solutions {
         return min;
     }
 
+    static int[] mergeTwoSortedArray(int[] ar, int[] ar1) {
+        //int merged[] = new int {ar.length+ar1.length};
+        int len = ar.length + ar1.length;
+        int array[] = new int[len];
+
+        int min = 0;
+        int current = 0;
+
+        int ar1Ctr = 0;
+        int ar2Ctr = 0;
+
+        while ((ar1Ctr + ar2Ctr) != len) {
+            if (ar1Ctr < ar1.length) {
+
+                array[ar1Ctr] = ar[ar1Ctr];
+
+                ar1Ctr++;
+            } else {
+                array[ar1Ctr + ar2Ctr] = ar1[ar2Ctr];
+
+                ar2Ctr++;
+
+            }
+
+        }
+
+//        for(int i = 0; i < len; i++)
+//        {
+//            if(i < ar.length)
+//            {
+//                array[i] = ar[i];
+//                System.out.println(array[i]);
+//            }else
+//            {
+//                array[i] = ar[ar1.length-i];
+//                System.out.println(array[i]);
+//            }
+//
+//
+//        }
+        return array;
+    }
+
+
+
 
 
 
