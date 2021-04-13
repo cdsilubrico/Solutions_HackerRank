@@ -426,6 +426,29 @@ public class Solutions {
         return array;
     }
 
+    static int[] breakingRecords(int[] scores) {
+        int[] answer = new int[2];
+        int highest, lowest;
+        highest = lowest = scores[0];
+        for(int i = 0; i < scores.length;i++)
+        {
+            if(scores[i] > highest)
+            {
+                highest=scores[i];
+                ++answer[0];
+            }
+            else if(scores[i] < lowest )
+            {
+                lowest=scores[i];
+                ++answer[1];
+            }
+
+        }
+
+        return answer;
+    }
+
+
 
 
 
