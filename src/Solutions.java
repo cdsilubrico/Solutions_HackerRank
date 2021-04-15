@@ -27,29 +27,20 @@ public class Solutions {
         String answer = "";
         int firstTwo = Integer.parseInt(s.substring(0, 2));
 
-        if(s.contains("AM"))
-        {
-            if(firstTwo == 12)
-            {
-                answer="00";
-                answer = answer+s.substring(2,8);
-            }
-            else
-            {
-                answer = s.substring(0,8);
+        if (s.contains("AM")) {
+            if (firstTwo == 12) {
+                answer = "00";
+                answer = answer + s.substring(2, 8);
+            } else {
+                answer = s.substring(0, 8);
             }
 
-        }
-        else if(s.contains("PM"))
-        {
-            if(firstTwo == 12)
-            {
-                answer = s.substring(0,8);
-            }
-            else
-            {
-                firstTwo+=12;
-                answer=answer+String.valueOf(firstTwo)+s.substring(2,8);
+        } else if (s.contains("PM")) {
+            if (firstTwo == 12) {
+                answer = s.substring(0, 8);
+            } else {
+                firstTwo += 12;
+                answer = answer + String.valueOf(firstTwo) + s.substring(2, 8);
             }
 
         }
@@ -211,18 +202,14 @@ public class Solutions {
         int aLen = apples.length;
         int oLen = oranges.length;
 
-        for(int i = 0; i < aLen;i++)
-        {
-            if(apples[i]+a >= s && apples[i]+a <= t)
-            {
+        for (int i = 0; i < aLen; i++) {
+            if (apples[i] + a >= s && apples[i] + a <= t) {
                 appleCount++;
             }
         }
 
-        for(int j = 0; j < oLen;j++)
-        {
-            if(oranges[j]+b >= s && oranges[j]+b <= t)
-            {
+        for (int j = 0; j < oLen; j++) {
+            if (oranges[j] + b >= s && oranges[j] + b <= t) {
                 orangeCount++;
             }
         }
@@ -233,23 +220,17 @@ public class Solutions {
     static String kangaroo(int x1, int v1, int x2, int v2) {
         String answer = "";
 
-        if(x2>x1 && v2>v1)
-        {
+        if (x2 > x1 && v2 > v1) {
             answer = "NO";
-        }
-        else
-        {
-            while(x2>x1)
-            {
-                x2=x2+v2;
-                x1=x1+v1;
-                if (x1==x2)
-                {
+        } else {
+            while (x2 > x1) {
+                x2 = x2 + v2;
+                x1 = x1 + v1;
+                if (x1 == x2) {
                     answer = "YES";
                 }
 
-                if(x1>x2)
-                {
+                if (x1 > x2) {
                     answer = "NO";
                 }
             }
@@ -430,16 +411,12 @@ public class Solutions {
         int[] answer = new int[2];
         int highest, lowest;
         highest = lowest = scores[0];
-        for(int i = 0; i < scores.length;i++)
-        {
-            if(scores[i] > highest)
-            {
-                highest=scores[i];
+        for (int i = 0; i < scores.length; i++) {
+            if (scores[i] > highest) {
+                highest = scores[i];
                 ++answer[0];
-            }
-            else if(scores[i] < lowest )
-            {
-                lowest=scores[i];
+            } else if (scores[i] < lowest) {
+                lowest = scores[i];
                 ++answer[1];
             }
 
@@ -448,19 +425,24 @@ public class Solutions {
         return answer;
     }
 
+    static int birthday(List<Integer> s, int d, int m) {
+        int answer, sum;
+        answer = sum  = 0;
+        for(int i = 0; i < s.size();i++)
+        {
+            if(i+m > s.size()) break;
+
+            for(int j = i; j < (i+m);j++)
+            {
+                sum+=s.get(j);
+            }
+
+            if(sum==d) answer++;
+
+            sum = 0;
+        }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return answer;
+    }
 }
