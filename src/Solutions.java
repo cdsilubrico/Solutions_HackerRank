@@ -427,22 +427,37 @@ public class Solutions {
 
     static int birthday(List<Integer> s, int d, int m) {
         int answer, sum;
-        answer = sum  = 0;
-        for(int i = 0; i < s.size();i++)
-        {
-            if(i+m > s.size()) break;
+        answer = sum = 0;
+        for (int i = 0; i < s.size(); i++) {
+            if (i + m > s.size()) break;
 
-            for(int j = i; j < (i+m);j++)
-            {
-                sum+=s.get(j);
+            for (int j = i; j < (i + m); j++) {
+                sum += s.get(j);
             }
 
-            if(sum==d) answer++;
+            if (sum == d) answer++;
 
             sum = 0;
         }
 
 
+        return answer;
+    }
+
+    static int divisibleSumPairs(int n, int k, int[] ar) {
+        int answer;
+        answer = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i; j < n - 1; j++) {
+                if(((ar[i]+ar[j+1])%k) == 0)
+                {
+                    answer++;
+                }
+
+            }
+
+        }
         return answer;
     }
 }
