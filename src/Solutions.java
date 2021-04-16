@@ -460,4 +460,26 @@ public class Solutions {
         }
         return answer;
     }
+
+    static int migratoryBirds(List<Integer> arr) {
+        int ary[] = new int[arr.size()];
+        int highest, answer;
+        highest = answer = 0;
+
+        for(int i = 0; i < arr.size() ; i++ )
+        {
+            ary[arr.get(i)]++;
+        }
+
+        for(int i = 0 ; i < arr.size() ; i++)
+        {
+            if(ary[i] > highest)
+            {
+                highest = ary[i];
+                answer = i;
+            }
+        }
+        return answer;
+    }
+
 }
