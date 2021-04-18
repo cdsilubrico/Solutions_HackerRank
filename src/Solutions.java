@@ -488,7 +488,7 @@ public class Solutions {
         int ans = day-eightMonthsTotal;
 
         String answer;
-        answer = "";
+        answer = "Bon Appetit";
 
         if(year == 1918)
             answer="26.09.1918";
@@ -496,6 +496,23 @@ public class Solutions {
             answer = (((year < 1918) && ((year % 4) == 0)) || (((year % 4) == 0) && ((year % 100) != 0)) || ((year % 400) == 0)) ? (String.valueOf(ans - 1) + ".09." + year) : (String.valueOf(ans) + ".09." + year);
 
         return answer;
+    }
+
+    static void bonAppetit(List<Integer> bill, int k, int b) {
+        int sum;
+        sum = 0;
+
+        for(int i = 0; i <bill.size();i++) {
+            if (i != k)sum+=bill.get(i);
+        }
+
+        if(b <= (sum/2))
+        {
+            System.out.println("Bon Appetit");
+        }else
+        {
+            System.out.println(b-(sum/2));
+        }
     }
 
 
