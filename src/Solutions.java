@@ -482,4 +482,21 @@ public class Solutions {
         return answer;
     }
 
+    static String dayOfProgrammer(int year) {
+        int eightMonthsTotal = 243;
+        final int day = 256;
+        int ans = day-eightMonthsTotal;
+
+        String answer;
+        answer = "";
+
+        if(year == 1918)
+            answer="26.09.1918";
+        else
+            answer = (((year < 1918) && ((year % 4) == 0)) || (((year % 4) == 0) && ((year % 100) != 0)) || ((year % 400) == 0)) ? (String.valueOf(ans - 1) + ".09." + year) : (String.valueOf(ans) + ".09." + year);
+
+        return answer;
+    }
+
+
 }
