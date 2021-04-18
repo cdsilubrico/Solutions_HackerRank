@@ -450,8 +450,7 @@ public class Solutions {
 
         for (int i = 0; i < n - 1; i++) {
             for (int j = i; j < n - 1; j++) {
-                if(((ar[i]+ar[j+1])%k) == 0)
-                {
+                if (((ar[i] + ar[j + 1]) % k) == 0) {
                     answer++;
                 }
 
@@ -466,15 +465,12 @@ public class Solutions {
         int highest, answer;
         highest = answer = 0;
 
-        for(int i = 0; i < arr.size() ; i++ )
-        {
+        for (int i = 0; i < arr.size(); i++) {
             ary[arr.get(i)]++;
         }
 
-        for(int i = 0 ; i < arr.size() ; i++)
-        {
-            if(ary[i] > highest)
-            {
+        for (int i = 0; i < arr.size(); i++) {
+            if (ary[i] > highest) {
                 highest = ary[i];
                 answer = i;
             }
@@ -485,13 +481,13 @@ public class Solutions {
     static String dayOfProgrammer(int year) {
         int eightMonthsTotal = 243;
         final int day = 256;
-        int ans = day-eightMonthsTotal;
+        int ans = day - eightMonthsTotal;
 
         String answer;
         answer = "Bon Appetit";
 
-        if(year == 1918)
-            answer="26.09.1918";
+        if (year == 1918)
+            answer = "26.09.1918";
         else
             answer = (((year < 1918) && ((year % 4) == 0)) || (((year % 4) == 0) && ((year % 100) != 0)) || ((year % 400) == 0)) ? (String.valueOf(ans - 1) + ".09." + year) : (String.valueOf(ans) + ".09." + year);
 
@@ -502,17 +498,24 @@ public class Solutions {
         int sum;
         sum = 0;
 
-        for(int i = 0; i <bill.size();i++) {
-            if (i != k)sum+=bill.get(i);
+        for (int i = 0; i < bill.size(); i++) {
+            if (i != k) sum += bill.get(i);
         }
 
-        if(b <= (sum/2))
-        {
+        if (b <= (sum / 2)) {
             System.out.println("Bon Appetit");
-        }else
-        {
-            System.out.println(b-(sum/2));
+        } else {
+            System.out.println(b - (sum / 2));
         }
+    }
+
+    static int pageCount(int n, int p) {
+
+        int startCountFront = n/2;
+        int targetFromFront = p/2;
+        int targetFromBack = startCountFront-targetFromFront;
+
+        return Math.min(targetFromFront,targetFromBack);
     }
 
 
