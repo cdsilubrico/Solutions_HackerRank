@@ -22,7 +22,8 @@ public class Main {
         //System.out.println(Solutions.timeConversion("12:45:54PM"));
         //System.out.println(Solutions.divisibleSumPairs(5,2,ar2));
         //System.out.println(Solutions.migratoryBirds(l1));
-        System.out.println(Solutions.dayOfProgrammer(2016   ));
+        //System.out.println(Solutions.dayOfProgrammer(2016  );
+        //Solutions.bonAppetit(l1,4,1);
 
 
     }
