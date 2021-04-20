@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] ar = {5, 20, 25, 400, 1000};
-        int[] ar2 = {5,9,10,7,4};
+        int[] ar = {40,50,60};
+        int[] ar2 = {5,8,12};
         int[] ar3 = {2, 4, 6, 0, -2, -4, 14};
         ArrayList<Integer> l1 = new ArrayList<>();
         l1.add(1);
@@ -24,7 +24,8 @@ public class Main {
         //System.out.println(Solutions.migratoryBirds(l1));
         //System.out.println(Solutions.dayOfProgrammer(2016  );
         //Solutions.bonAppetit(l1,4,1);
-        System.out.println(Solutions.pageCount(6,2));
+        //System.out.println(Solutions.pageCount(6,2));
+        System.out.println(Solutions.getMoneySpent(ar,ar2,60));
 
     }
 
