@@ -518,5 +518,28 @@ public class Solutions {
         return Math.min(targetFromFront,targetFromBack);
     }
 
+    static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+        int answer, sum;
+        answer = sum = 0;
+
+        for(int i = 0; i < keyboards.length;i++) {
+            for (int j = 0; j < drives.length; j++)
+            {
+                sum=keyboards[i]+drives[j];
+                if(sum >= answer && sum <= b)
+                {
+                    answer = sum;
+                }
+            }
+        }
+
+        if(answer == 0)
+        {
+            return -1;
+        }
+
+        return answer;
+    }
+
 
 }
