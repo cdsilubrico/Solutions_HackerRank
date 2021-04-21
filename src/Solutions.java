@@ -541,5 +541,28 @@ public class Solutions {
         return answer;
     }
 
+    static String catAndMouse(int x, int y, int z) {
+        int xDist, yDist;
+        String answer;
+
+        xDist = Math.abs(z-x);
+        yDist = Math.abs(z-y);
+
+        if(xDist < yDist)
+        {
+            answer = "Cat A";
+        }
+        else if (xDist == yDist)
+        {
+            answer = "Mouse C";
+        }
+        else
+        {
+            answer = "Cat B";
+        }
+
+        return answer;
+    }
+
 
 }
