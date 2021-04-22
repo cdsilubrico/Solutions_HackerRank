@@ -564,5 +564,38 @@ public class Solutions {
         return answer;
     }
 
+    //**
+    static int formingMagicSquare(int[][] s) {
+        int answer, sumVertical, sumHorizontal, sumDiagonalLeft,sumDiagonalRight;
+        boolean[] result = new boolean[s.length];
+        sumDiagonalLeft = s[0][0]+s[1][1]+s[2][2];
+        sumDiagonalRight = s[0][2]+s[1][1]+s[2][0];
+        answer = 0;
+
+        for(int i = 0; i < s.length;i++)
+        {
+            for(int j = 0; j <s.length;j++)
+            {
+                sumVertical=s[i][j]+s[i+1][j]+s[i+2][j];
+                sumHorizontal=s[i][j]+s[i][j+1]+s[i][j+2];
+
+                if(sumVertical==15)
+                {
+                    result[i] = true;
+                }else result[i] = false;
+
+                if(sumHorizontal == 15)
+                {
+                    result[i]=true;
+                }else result[i] = false;
+            }
+        }
+
+        return answer;
+    }
+
+
+
+
 
 }
