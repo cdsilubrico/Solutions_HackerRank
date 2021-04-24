@@ -620,6 +620,27 @@ public class Solutions {
         return Math.max(max,i-start+1);
     }
 
+    public static int hurdleRace(int k, List<Integer> height)
+    {
+        int max = height.get(0);
+        int doseNeeded;
+
+        for(int i = 0; i < height.size();i++)
+        {
+            if(height.get(i) > max)
+            {
+                max = height.get(i);
+            }
+        }
+
+        if(k > max)
+        {
+            return 0;
+        }
+
+        doseNeeded = Math.abs(max - k);
+        return doseNeeded;
+    }
 
 
 
