@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Solutions {
 
@@ -641,6 +639,26 @@ public class Solutions {
         doseNeeded = Math.abs(max - k);
         return doseNeeded;
     }
+
+    //Too Slow
+    public static List<Integer> climbingLeaderboard(List<Integer> ranked, List<Integer> player) {
+
+        List<Integer> playerRank = new ArrayList<>();
+
+        for(int i = 0; i < player.size();i++)
+        {
+            ranked.add(player.get(i));//Add Element
+            Collections.sort(ranked);
+            Collections.reverse(ranked);
+            ranked = ranked.stream().distinct().collect(Collectors.toList());//Remove Duplicate
+            playerRank.add(ranked.indexOf(player.get(i))+1);
+        }
+
+        return playerRank;
+
+    }
+
+
 
 
 
