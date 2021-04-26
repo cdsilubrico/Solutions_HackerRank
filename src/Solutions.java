@@ -658,7 +658,25 @@ public class Solutions {
 
     }
 
+    public static int designerPdfViewer(List<Integer> h, String word) {
+        int ascii;
+        int max = h.get(0);
 
+        word.toLowerCase();
+
+        for(int i = 0; i < word.length();i++)
+        {
+            ascii = word.charAt(i) - 97;//ascii
+            System.out.println(ascii);
+            if(h.get(ascii) > max)
+            {
+                max = h.get(ascii);
+            }
+
+        }
+
+        return max*word.length();
+    }
 
 
 
