@@ -695,6 +695,25 @@ public class Solutions {
         return height;
     }
 
+    public static String angryProfessor(int k, List<Integer> a) {
+        int len = a.size();
+        int total;
+        total = 0;
+
+
+        for(int i =0; i < len; i++)
+        {
+            if(a.get(i) <=0)
+                total++;
+
+            if(total >= k)
+                return "NO";
+        }
+
+
+        return "YES";
+    }
+
 
 
 
