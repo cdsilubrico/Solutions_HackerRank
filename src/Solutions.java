@@ -510,30 +510,27 @@ public class Solutions {
 
     static int pageCount(int n, int p) {
 
-        int startCountFront = n/2;
-        int targetFromFront = p/2;
-        int targetFromBack = startCountFront-targetFromFront;
+        int startCountFront = n / 2;
+        int targetFromFront = p / 2;
+        int targetFromBack = startCountFront - targetFromFront;
 
-        return Math.min(targetFromFront,targetFromBack);
+        return Math.min(targetFromFront, targetFromBack);
     }
 
     static int getMoneySpent(int[] keyboards, int[] drives, int b) {
         int answer, sum;
         answer = sum = 0;
 
-        for(int i = 0; i < keyboards.length;i++) {
-            for (int j = 0; j < drives.length; j++)
-            {
-                sum=keyboards[i]+drives[j];
-                if(sum >= answer && sum <= b)
-                {
+        for (int i = 0; i < keyboards.length; i++) {
+            for (int j = 0; j < drives.length; j++) {
+                sum = keyboards[i] + drives[j];
+                if (sum >= answer && sum <= b) {
                     answer = sum;
                 }
             }
         }
 
-        if(answer == 0)
-        {
+        if (answer == 0) {
             return -1;
         }
 
@@ -544,19 +541,14 @@ public class Solutions {
         int xDist, yDist;
         String answer;
 
-        xDist = Math.abs(z-x);
-        yDist = Math.abs(z-y);
+        xDist = Math.abs(z - x);
+        yDist = Math.abs(z - y);
 
-        if(xDist < yDist)
-        {
+        if (xDist < yDist) {
             answer = "Cat A";
-        }
-        else if (xDist == yDist)
-        {
+        } else if (xDist == yDist) {
             answer = "Mouse C";
-        }
-        else
-        {
+        } else {
             answer = "Cat B";
         }
 
@@ -565,28 +557,24 @@ public class Solutions {
 
     //**
     static int formingMagicSquare(int[][] s) {
-        int answer, sumVertical, sumHorizontal, sumDiagonalLeft,sumDiagonalRight;
+        int answer, sumVertical, sumHorizontal, sumDiagonalLeft, sumDiagonalRight;
         boolean[] result = new boolean[s.length];
-        sumDiagonalLeft = s[0][0]+s[1][1]+s[2][2];
-        sumDiagonalRight = s[0][2]+s[1][1]+s[2][0];
+        sumDiagonalLeft = s[0][0] + s[1][1] + s[2][2];
+        sumDiagonalRight = s[0][2] + s[1][1] + s[2][0];
         answer = 0;
 
-        for(int i = 0; i < s.length;i++)
-        {
-            for(int j = 0; j <s.length;j++)
-            {
-                sumVertical=s[i][j]+s[i+1][j]+s[i+2][j];
-                sumHorizontal=s[i][j]+s[i][j+1]+s[i][j+2];
+        for (int i = 0; i < s.length; i++) {
+            for (int j = 0; j < s.length; j++) {
+                sumVertical = s[i][j] + s[i + 1][j] + s[i + 2][j];
+                sumHorizontal = s[i][j] + s[i][j + 1] + s[i][j + 2];
 
-                if(sumVertical==15)
-                {
+                if (sumVertical == 15) {
                     result[i] = true;
-                }else result[i] = false;
+                } else result[i] = false;
 
-                if(sumHorizontal == 15)
-                {
-                    result[i]=true;
-                }else result[i] = false;
+                if (sumHorizontal == 15) {
+                    result[i] = true;
+                } else result[i] = false;
             }
         }
 
@@ -594,45 +582,38 @@ public class Solutions {
     }
 
     //**
-    public static int pickingNumbers(List<Integer> a)
-    {
+    public static int pickingNumbers(List<Integer> a) {
         Collections.sort(a);
         int start = 0;
         int i = 0;
         int max = Integer.MAX_VALUE;
 
-        while(i < a.size())
-        {
-            if(Math.abs(a.get(start)-a.get(i))> 1)
-            {
+        while (i < a.size()) {
+            if (Math.abs(a.get(start) - a.get(i)) > 1) {
                 start = i;
             }
 
-            max = Math.max(max,i-start+1);
+            max = Math.max(max, i - start + 1);
             i++;
 
 
         }
         i--;
 
-        return Math.max(max,i-start+1);
+        return Math.max(max, i - start + 1);
     }
 
-    public static int hurdleRace(int k, List<Integer> height)
-    {
+    public static int hurdleRace(int k, List<Integer> height) {
         int max = height.get(0);
         int doseNeeded;
 
-        for(int i = 0; i < height.size();i++)
-        {
-            if(height.get(i) > max)
-            {
+        for (int i = 0; i < height.size(); i++) {
+            if (height.get(i) > max) {
                 max = height.get(i);
             }
         }
 
-        if(k > max)
-        {
+        if (k > max) {
             return 0;
         }
 
@@ -645,13 +626,12 @@ public class Solutions {
 
         List<Integer> playerRank = new ArrayList<>();
 
-        for(int i = 0; i < player.size();i++)
-        {
+        for (int i = 0; i < player.size(); i++) {
             ranked.add(player.get(i));//Add Element
             Collections.sort(ranked);
             Collections.reverse(ranked);
             ranked = ranked.stream().distinct().collect(Collectors.toList());//Remove Duplicate
-            playerRank.add(ranked.indexOf(player.get(i))+1);
+            playerRank.add(ranked.indexOf(player.get(i)) + 1);
         }
 
         return playerRank;
@@ -664,32 +644,28 @@ public class Solutions {
 
         word.toLowerCase();
 
-        for(int i = 0; i < word.length();i++)
-        {
+        for (int i = 0; i < word.length(); i++) {
             ascii = word.charAt(i) - 97;//ascii
             System.out.println(ascii);
-            if(h.get(ascii) > max)
-            {
+            if (h.get(ascii) > max) {
                 max = h.get(ascii);
             }
 
         }
 
-        return max*word.length();
+        return max * word.length();
     }
 
     public static int utopianTree(int n) {
         int height;
         height = 1;
 
-        for(int i = 1; i <=n;i++)
-        {
-            if(i%2==0)
-            {
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
 
-                height+=1;
-            }else
-                height = height*2;
+                height += 1;
+            } else
+                height = height * 2;
         }
 
         return height;
@@ -701,12 +677,11 @@ public class Solutions {
         total = 0;
 
 
-        for(int i =0; i < len; i++)
-        {
-            if(a.get(i) <=0)
+        for (int i = 0; i < len; i++) {
+            if (a.get(i) <= 0)
                 total++;
 
-            if(total >= k)
+            if (total >= k)
                 return "NO";
         }
 
@@ -714,7 +689,29 @@ public class Solutions {
         return "YES";
     }
 
+    public static int beautifulDays(int i, int j, int k) {
+        int days, len, difference, reversed, temp, digit;
+        days = reversed = 0;
+        len = Math.abs(i - j) + 1;
 
+        for (int a = 0; a < len; a++) {
+            temp = i;
+            while (temp != 0) {
+                digit = temp % 10;
+                reversed = reversed * 10 + digit;
+                temp /= 10;
+            }
 
+            difference = Math.abs(i - reversed);
+            if ((difference % k) == 0) {
+                days++;
+            }
+            reversed = 0;
+            temp = i;
+            i++;
+
+        }
+        return days;
+    }
 
 }
