@@ -714,4 +714,23 @@ public class Solutions {
         return days;
     }
 
+    public static int viralAdvertising(int n) {
+        int days,interested,person;
+        days  = 0;
+        person = 5;
+
+        while(n>0)
+        {
+            interested = person / 2;
+            person = interested * 3;
+            days = days + interested;
+            n--;
+        }
+
+
+
+        return days;
+
+    }
+
 }
