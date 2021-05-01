@@ -733,4 +733,14 @@ public class Solutions {
 
     }
 
+    public static int saveThePrisoner(int n, int m, int s) {
+        int unlucky,no,tempS;
+
+        unlucky = ((s+m)-1)%n;
+
+        if(unlucky==0) unlucky = n;
+
+        return unlucky;
+    }
+
 }
