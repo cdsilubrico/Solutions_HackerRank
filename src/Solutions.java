@@ -734,7 +734,7 @@ public class Solutions {
     }
 
     public static int saveThePrisoner(int n, int m, int s) {
-        int unlucky,no,tempS;
+        int unlucky;
 
         unlucky = ((s+m)-1)%n;
 
@@ -742,5 +742,17 @@ public class Solutions {
 
         return unlucky;
     }
+
+    public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
+        List<Integer> circular = new ArrayList<>();
+
+        k = k % a.size();
+        for (int i = 0; i < queries.size(); i++) {
+            circular.add(a.get((queries.get(i) - k + a.size()) % a.size()));
+        }
+
+        return circular;
+    }
+
 
 }
