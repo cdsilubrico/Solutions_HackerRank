@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -7,12 +8,16 @@ public class Main {
         int[] ar = {40,50,60};
         int[] ar2 = {5,8,12};
         int[] ar3 = {2, 4, 6, 0, -2, -4, 14};
-        ArrayList<Integer> l1 = new ArrayList<>();
+
+        List<Integer> l1 = new ArrayList<>();
         l1.add(1);
         l1.add(2);
-        l1.add(3);
-        l1.add(4);
-        l1.add(5);
+
+        List<Integer> l2 = new ArrayList<>();
+        l2.add(3);
+        l2.add(4);
+        l2.add(5);
+
         //System.out.println(secondMinimum(ar));
         //System.out.println(Arrays.toString(mergeTwoSortedArray(ar2,ar3)));
         //plusMinus(ar3);
@@ -25,8 +30,8 @@ public class Main {
         //System.out.println(Solutions.dayOfProgrammer(2016  );
         //Solutions.bonAppetit(l1,4,1);
         //System.out.println(Solutions.pageCount(6,2));
-        System.out.println(Solutions.getMoneySpent(ar,ar2,60));
-
+        //System.out.println(Solutions.getMoneySpent(ar,ar2,60));
+        System.out.println(Solutions.circularArrayRotation(l2,2,l1));
     }
 
 
