@@ -754,5 +754,31 @@ public class Solutions {
         return circular;
     }
 
+    public static List<Integer> permutationEquation(List<Integer> p) {
+        // Write your code here
+        List<Integer> permu = new ArrayList<>();
+
+        for(int i = 1; i <= p.size();i++)
+        {
+            permu.add(p.get(p.get(i)));
+        }
+
+        return permu;
+    }
+
+    static int jumpingOnClouds(int[] c, int k) {
+        int en = 100;
+        int index = k%c.length;
+
+        en-=c[index] * 2+1;
+        while(index!=0)
+        {
+            index = (index+k)%c.length;
+            en-= c[index] * 2 +1;
+        }
+
+        return en;
+    }
+
 
 }
