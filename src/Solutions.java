@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Solutions {
@@ -780,5 +781,31 @@ public class Solutions {
         return en;
     }
 
+    public static int findDigits(int n) {
+        int divisor;
+        divisor = 0;
+
+        String inStr = String.valueOf(n);
+
+        for(int i =0 ; i<inStr.length();i++)
+        {
+            int temp = Integer.parseInt(String.valueOf(inStr.charAt(i)));
+
+            if(temp == 0)
+            {
+            }
+            else
+            {
+                if(n%temp==0)
+                {
+                    divisor++;
+                }
+            }
+        }
+
+
+
+        return divisor;
+    }
 
 }
