@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -806,6 +807,18 @@ public class Solutions {
 
 
         return divisor;
+    }
+
+    public static void extraLongFactorials(int n) {
+        // Write your code here
+        BigInteger factorial = BigInteger.ONE;
+
+        for(int i = 0; i < n; i++)
+        {
+            factorial=factorial.multiply(BigInteger.valueOf(n-i));
+        }
+
+        System.out.println(factorial);
     }
 
 }
