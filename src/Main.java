@@ -33,6 +33,7 @@ public class Main {
         //System.out.println(Solutions.getMoneySpent(ar,ar2,60));
         //System.out.println(Solutions.circularArrayRotation(l2,2,l1));
         //System.out.println(Solutions.myAtoi("-42 asdfasfads"));
+        System.out.println(Solutions.appendAndDelete("HelloWorld","HelloStar",6));
     }
 
 
