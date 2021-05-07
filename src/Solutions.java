@@ -821,4 +821,44 @@ public class Solutions {
         System.out.println(factorial);
     }
 
+    public static String appendAndDelete(String s, String t, int k) {
+        String answer;
+        answer ="";
+
+        if (s.equals(t))
+        {
+            if(k >= s.length() *2|| k % 2 ==0)
+            {
+                answer="Yes";
+            }else
+                answer = "No";
+        }
+
+        int commonLength;
+        commonLength = 0;
+
+        for(int i = 0; i <Math.min(s.length(),t.length());i++)
+        {
+            if(t.charAt(i)!=s.charAt(i))
+            {
+                break;
+            }
+            commonLength++;
+        }
+
+        int comS = s.length() -commonLength;
+        int comT = t.length() - commonLength;
+        int sum = comS+comT;
+
+        if(sum==k || sum < k && (sum -k) %2 ==0 || sum+(2*commonLength) <= k)
+        {
+            answer="Yes";
+        }
+        else
+            answer="No";
+
+
+        return answer;
+    }
+
 }
