@@ -861,4 +861,23 @@ public class Solutions {
         return answer;
     }
 
+    public static int squares(int a, int b) {
+
+        int noSquares,temp,sqr;
+        temp = sqr = 1;
+
+        noSquares = 0;
+
+        while(sqr <= b)//while sqr(1) is less than or equals to b(end)
+        {
+            if(sqr>=a&&sqr<=b)
+                noSquares++;
+
+            temp++;
+            sqr=temp*temp;
+        }
+
+        return noSquares;
+    }
+
 }
