@@ -35,7 +35,9 @@ public class Main {
         //System.out.println(Solutions.myAtoi("-42 asdfasfads"));
         //System.out.println(Solutions.appendAndDelete("HelloWorld","HelloStar",6));
 
-        Solutions.squares(15,30);
+        //Solutions.squares(15,30);
+        //System.out.println(Solutions.libraryFine(2,7,1014,1,1,1015));
+        System.out.println(Solutions.libraryFine(2,7,1014,1,1,1015));
     }
 
 
