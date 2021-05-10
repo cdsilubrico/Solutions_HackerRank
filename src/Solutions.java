@@ -899,5 +899,30 @@ public class Solutions {
         return fine;
     }
 
+    //2/10 F
+    public static List<Integer> cutTheSticks(List<Integer> arr) {
+        List<Integer> sticksCut = new ArrayList<Integer>();
+
+        Collections.sort(arr);
+
+        System.out.println(arr.get(0));
+        System.out.println(arr.get(1));
+        System.out.println(arr.get(2));
+        sticksCut.add(arr.size());
+
+        for (int i = 1; i < arr.size(); i++) {
+            if(arr.get(i)!=arr.get(i-1))
+            {
+                sticksCut.add(arr.size()-i);
+                System.out.println(arr.size()-i);
+            }
+        }
+
+        return sticksCut;
+
+    }
+
+
+
 
 }
