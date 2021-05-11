@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class Main {
@@ -10,8 +11,28 @@ public class Main {
         int[] ar3 = {2, 4, 6, 0, -2, -4, 14};
 
         List<Integer> l1 = new ArrayList<>();
-        l1.add(1);
-        l1.add(2);
+        l1.add(19);
+        l1.add(10);
+        l1.add(12);
+        l1.add(10);
+        l1.add(24);
+        l1.add(25);
+        l1.add(22);
+//        l1.add(278);
+//        l1.add(576);
+//        l1.add(496);
+//        l1.add(727);
+//        l1.add(410);
+//        l1.add(124);
+//        l1.add(338);
+//        l1.add(149);
+//        l1.add(209);
+//        l1.add(702);
+//        l1.add(282);
+//        l1.add(718);
+//        l1.add(771);
+//        l1.add(575);
+//        l1.add(436);
 
         List<Integer> l2 = new ArrayList<>();
         l2.add(3);
@@ -37,7 +58,8 @@ public class Main {
 
         //Solutions.squares(15,30);
         //System.out.println(Solutions.libraryFine(2,7,1014,1,1,1015));
-        System.out.println(Solutions.libraryFine(2,7,1014,1,1,1015));
+        //System.out.println(Solutions.libraryFine(2,7,1014,1,1,1015));
+        System.out.println(Solutions.nonDivisibleSubset(4,l1));
     }
 
 
