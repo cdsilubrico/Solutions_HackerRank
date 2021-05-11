@@ -1,6 +1,7 @@
 import sun.security.krb5.internal.SeqNumber;
 
 import java.math.BigInteger;
+import java.sql.Array;
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -719,18 +720,16 @@ public class Solutions {
     }
 
     public static int viralAdvertising(int n) {
-        int days,interested,person;
-        days  = 0;
+        int days, interested, person;
+        days = 0;
         person = 5;
 
-        while(n>0)
-        {
+        while (n > 0) {
             interested = person / 2;
             person = interested * 3;
             days = days + interested;
             n--;
         }
-
 
 
         return days;
@@ -740,9 +739,9 @@ public class Solutions {
     public static int saveThePrisoner(int n, int m, int s) {
         int unlucky;
 
-        unlucky = ((s+m)-1)%n;
+        unlucky = ((s + m) - 1) % n;
 
-        if(unlucky==0) unlucky = n;
+        if (unlucky == 0) unlucky = n;
 
         return unlucky;
     }
@@ -762,8 +761,7 @@ public class Solutions {
         // Write your code here
         List<Integer> permu = new ArrayList<>();
 
-        for(int i = 1; i <= p.size();i++)
-        {
+        for (int i = 1; i <= p.size(); i++) {
             permu.add(p.get(p.get(i)));
         }
 
@@ -772,13 +770,12 @@ public class Solutions {
 
     static int jumpingOnClouds(int[] c, int k) {
         int en = 100;
-        int index = k%c.length;
+        int index = k % c.length;
 
-        en-=c[index] * 2+1;
-        while(index!=0)
-        {
-            index = (index+k)%c.length;
-            en-= c[index] * 2 +1;
+        en -= c[index] * 2 + 1;
+        while (index != 0) {
+            index = (index + k) % c.length;
+            en -= c[index] * 2 + 1;
         }
 
         return en;
@@ -790,22 +787,16 @@ public class Solutions {
 
         String inStr = String.valueOf(n);
 
-        for(int i =0 ; i<inStr.length();i++)
-        {
+        for (int i = 0; i < inStr.length(); i++) {
             int temp = Integer.parseInt(String.valueOf(inStr.charAt(i)));
 
-            if(temp == 0)
-            {
-            }
-            else
-            {
-                if(n%temp==0)
-                {
+            if (temp == 0) {
+            } else {
+                if (n % temp == 0) {
                     divisor++;
                 }
             }
         }
-
 
 
         return divisor;
@@ -815,9 +806,8 @@ public class Solutions {
         // Write your code here
         BigInteger factorial = BigInteger.ONE;
 
-        for(int i = 0; i < n; i++)
-        {
-            factorial=factorial.multiply(BigInteger.valueOf(n-i));
+        for (int i = 0; i < n; i++) {
+            factorial = factorial.multiply(BigInteger.valueOf(n - i));
         }
 
         System.out.println(factorial);
@@ -825,39 +815,33 @@ public class Solutions {
 
     public static String appendAndDelete(String s, String t, int k) {
         String answer;
-        answer ="";
+        answer = "";
 
-        if (s.equals(t))
-        {
-            if(k >= s.length() *2|| k % 2 ==0)
-            {
-                answer="Yes";
-            }else
+        if (s.equals(t)) {
+            if (k >= s.length() * 2 || k % 2 == 0) {
+                answer = "Yes";
+            } else
                 answer = "No";
         }
 
         int commonLength;
         commonLength = 0;
 
-        for(int i = 0; i <Math.min(s.length(),t.length());i++)
-        {
-            if(t.charAt(i)!=s.charAt(i))
-            {
+        for (int i = 0; i < Math.min(s.length(), t.length()); i++) {
+            if (t.charAt(i) != s.charAt(i)) {
                 break;
             }
             commonLength++;
         }
 
-        int comS = s.length() -commonLength;
+        int comS = s.length() - commonLength;
         int comT = t.length() - commonLength;
-        int sum = comS+comT;
+        int sum = comS + comT;
 
-        if(sum==k || sum < k && (sum -k) %2 ==0 || sum+(2*commonLength) <= k)
-        {
-            answer="Yes";
-        }
-        else
-            answer="No";
+        if (sum == k || sum < k && (sum - k) % 2 == 0 || sum + (2 * commonLength) <= k) {
+            answer = "Yes";
+        } else
+            answer = "No";
 
 
         return answer;
@@ -865,18 +849,18 @@ public class Solutions {
 
     public static int squares(int a, int b) {
 
-        int noSquares,temp,sqr;
+        int noSquares, temp, sqr;
         temp = sqr = 1;
 
         noSquares = 0;
 
-        while(sqr <= b)//while sqr(1) is less than or equals to b(end)
+        while (sqr <= b)//while sqr(1) is less than or equals to b(end)
         {
-            if(sqr>=a&&sqr<=b)
+            if (sqr >= a && sqr <= b)
                 noSquares++;
 
             temp++;
-            sqr=temp*temp;
+            sqr = temp * temp;
         }
 
         return noSquares;
@@ -886,14 +870,14 @@ public class Solutions {
         int fine;
         fine = 0;
 
-        if(y1 < y2 || (y1 == y2 && m1 < m2) || (y1 == y2 && m1 == m2 && d1 <= d2)){
-            fine=0;
-        } else if(y1 > y2){
-            fine=10000;
-        } else if(y1 == y2 && m1 > m2){
-            fine=(500 * (m1 - m2));
-        } else if(y1 == y2 && m1 == m2 && d1 > d2){
-            fine=(15 * (d1 - d2));
+        if (y1 < y2 || (y1 == y2 && m1 < m2) || (y1 == y2 && m1 == m2 && d1 <= d2)) {
+            fine = 0;
+        } else if (y1 > y2) {
+            fine = 10000;
+        } else if (y1 == y2 && m1 > m2) {
+            fine = (500 * (m1 - m2));
+        } else if (y1 == y2 && m1 == m2 && d1 > d2) {
+            fine = (15 * (d1 - d2));
         }
 
         return fine;
@@ -911,10 +895,9 @@ public class Solutions {
         sticksCut.add(arr.size());
 
         for (int i = 1; i < arr.size(); i++) {
-            if(arr.get(i)!=arr.get(i-1))
-            {
-                sticksCut.add(arr.size()-i);
-                System.out.println(arr.size()-i);
+            if (arr.get(i) != arr.get(i - 1)) {
+                sticksCut.add(arr.size() - i);
+                System.out.println(arr.size() - i);
             }
         }
 
@@ -922,7 +905,33 @@ public class Solutions {
 
     }
 
+    public static int nonDivisibleSubset(int k, List<Integer> s) {
+        int[] count = new int[k];
+        for (int i = 0; i < s.size(); i++) {
+            count[s.get(i) % k]++;
+        }
 
+        int result;
+        result = 0;
+        if (count[0] > 0) {
+            result++;
+        }
 
+        for (int i = 1; i < count.length; i++) {
+            if (i == (k - i)) {
+                result++;
+            } else {
+                if (count[i] >= count[k - i]) {
+                    result += count[i];
+                } else {
+                    result += count[k - i];
+                }
+                count[i] = 0;
+                count[k - i] = 0;
+            }
+        }
+
+        return result;
+    }
 
 }
