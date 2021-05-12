@@ -111,7 +111,7 @@ public class Solutions {
         int len = a.length;
         int ctr = 0;
 
-        int reverse[] = new int[len];
+        int[] reverse = new int[len];
 
         while (len != 0) {
             reverse[ctr] = a[len - 1];
@@ -933,5 +933,27 @@ public class Solutions {
 
         return result;
     }
+
+    public static int equalizeArray(List<Integer> arr) {
+        //find max occurence, delete the rest
+        int itemsToDelete = 0;
+        int highestFrequency = 1;
+        HashMap<Integer,Integer> numberFrequency = new HashMap<Integer,Integer>();
+
+        for (Integer integer : arr) {
+            if (numberFrequency.get(integer) == null) {
+                numberFrequency.put(integer, 1);
+            } else {
+                int newFrequency = numberFrequency.get(integer) + 1;
+
+                numberFrequency.put(integer, newFrequency);
+                highestFrequency = (newFrequency > highestFrequency) ? newFrequency : highestFrequency;
+            }
+        }
+
+        itemsToDelete = arr.size() - highestFrequency;
+        return itemsToDelete;
+    }
+
 
 }
