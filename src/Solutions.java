@@ -938,7 +938,7 @@ public class Solutions {
         //find max occurence, delete the rest
         int itemsToDelete = 0;
         int highestFrequency = 1;
-        HashMap<Integer,Integer> numberFrequency = new HashMap<Integer,Integer>();
+        HashMap<Integer, Integer> numberFrequency = new HashMap<Integer, Integer>();
 
         for (Integer integer : arr) {
             if (numberFrequency.get(integer) == null) {
@@ -953,6 +953,85 @@ public class Solutions {
 
         itemsToDelete = arr.size() - highestFrequency;
         return itemsToDelete;
+    }
+
+    //**
+    public static int queensAttack(int n, int k, int r_q, int c_q, List<List<Integer>> obstacles) {
+        HashMap<Integer, HashSet<Integer>> cache = new HashMap<>();
+        for (int i = 0; i < obstacles.size(); i++) {
+            if (cache.containsKey(obstacles.get(i).get(0))) {
+                cache.get(obstacles.get(i).get(0)).add(obstacles.get(i).get(1));
+            } else {
+                cache.put(obstacles.get(i).get(0), new HashSet<Integer>());
+                cache.get(obstacles.get(i).get(0)).add(obstacles.get(i).get(1));
+            }
+        }
+        int counter = 0;
+        // right
+        for (int i = c_q + 1; i <= n; i++) {
+            if (cache.containsKey(r_q) && cache.get(r_q).contains(i)) {
+                break;
+            }
+            counter++;
+        }
+
+        // left
+        for (int i = c_q - 1; i >= 1; i--) {
+            if (cache.containsKey(r_q) && cache.get(r_q).contains(i)) {
+                break;
+            }
+            counter++;
+        }
+
+        // down
+        for (int i = r_q + 1; i <= n; i++) {
+            if (cache.containsKey(i) && cache.get(i).contains(c_q)) {
+                break;
+            }
+            counter++;
+        }
+
+        // up
+        for (int i = r_q - 1; i >= 1; i--) {
+            if (cache.containsKey(i) && cache.get(i).contains(c_q)) {
+                break;
+            }
+            counter++;
+        }
+
+        // up-left
+        for (int i = r_q - 1, j = c_q - 1; i >= 1 && j >= 1; i--, j--) {
+            if (cache.containsKey(i) && cache.get(i).contains(j)) {
+                break;
+            }
+            counter++;
+        }
+
+        // up-right
+        for (int i = r_q - 1, j = c_q + 1; i >= 1 && j <= n; i--, j++) {
+            if (cache.containsKey(i) && cache.get(i).contains(j)) {
+                break;
+            }
+            counter++;
+        }
+
+        // down-right
+        for (int i = r_q + 1, j = c_q + 1; i <= n && j <= n; i++, j++) {
+            if (cache.containsKey(i) && cache.get(i).contains(j)) {
+                break;
+            }
+            counter++;
+        }
+
+        // down-left
+        for (int i = r_q + 1, j = c_q - 1; i <= n && j >= 1; i++, j--) {
+            if (cache.containsKey(i) && cache.get(i).contains(j)) {
+                break;
+            }
+            counter++;
+        }
+
+        return counter;
     }
 
 
