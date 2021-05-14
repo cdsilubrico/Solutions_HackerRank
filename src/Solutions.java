@@ -1034,5 +1034,43 @@ public class Solutions {
         return counter;
     }
 
+    //**
+    public static List<Integer> acmTeam(List<String> topic) {
+        List<Integer> answer = new ArrayList<>();
+        int n = topic.size();
+        int m = topic.get(0).length();
+        int max, team;
+        max = team = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                String s1 = topic.get(i);
+                String s2 = topic.get(j);
+
+                int count=0;
+
+                for (int k = 0; k < m; k++) {
+                    if (s1.charAt(k) == '1' || s2.charAt(k) == '1') {
+                        count++;
+                    }
+                }
+
+                team += (max == count) ? 1 : 0;
+
+                if(count > max)
+                {
+                    team = 1;
+                    max = count;
+                }
+
+            }
+        }
+
+        answer.add(max);
+        answer.add(team);
+
+        return answer;
+    }
+
 
 }
