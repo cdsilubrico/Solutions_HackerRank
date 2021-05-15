@@ -1072,5 +1072,17 @@ public class Solutions {
         return answer;
     }
 
+    public static long taumBday(int b, int w, int bc, int wc, int z) {
+        long min;
+
+
+        long minBlack = Math.min(bc, wc + z);
+        long minWhite = Math.min(wc, bc + z);
+
+        min =(minBlack * b) + (minWhite * w);
+
+        return min;
+    }
+
 
 }
