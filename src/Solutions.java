@@ -1084,5 +1084,39 @@ public class Solutions {
         return min;
     }
 
+    //**
+    public static String organizingContainers(List<List<Integer>> container) {
+        // Write your code here
+        LinkedList<Integer> containers = new LinkedList<>();
+        LinkedList<Integer> balls = new LinkedList<>();
+
+        for(int i = 0; i < container.size();i++)
+        {
+            int row = 0;
+            int col = 0;
+
+            for(int j = 0; j <container.size();j++)
+            {
+                row+=container.get(i).get(j);
+                col+=container.get(j).get(i);
+            }
+            balls.add(col);
+            containers.add(row);
+
+        }
+
+        containers.removeAll(balls);
+
+        if(containers.isEmpty())
+        {
+            return "Possible";
+        }
+        else
+            return "Impossible";
+
+    }
+
+
+
 
 }
