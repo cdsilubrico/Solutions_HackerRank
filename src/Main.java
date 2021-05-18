@@ -60,11 +60,16 @@ public class Main {
         //System.out.println(Solutions.libraryFine(2,7,1014,1,1,1015));
         //System.out.println(Solutions.libraryFine(2,7,1014,1,1,1015));
         //System.out.println(Solutions.nonDivisibleSubset(4,l1));
-        List<String> l = new ArrayList<String>();
+        /*List<String> l = new ArrayList<String>();
         l.add("10101");
         l.add("11110");
         l.add("00010");
         System.out.println(Solutions.acmTeam(l));
+        */
+
+        System.out.println(Solutions.encryption("wclwfoznbmyycxvaxagjhtexdkwjqhlojykopldsxesbbnezqmixfpujbssrbfhlgubvfhpfliimvmnny"));
+
+
     }
 
 
