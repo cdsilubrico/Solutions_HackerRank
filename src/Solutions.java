@@ -1116,7 +1116,23 @@ public class Solutions {
 
     }
 
+    public static String encryption(String s) {
+        String noSpace = s.replace(" ", "");//String s with spaces removed
+        String answer = "";
+        double s1 = Math.sqrt(noSpace.length());
+        int row = (int) Math.floor(s1);
+        int col = row+1;
 
+        for(int j=0;j<col;j++)
+        {
+            for(int i = j; i<noSpace.length();i+=col)
+            {
+                answer+=noSpace.charAt(i);
+            }
+            answer+=" ";
+        }
 
+        return answer;
+    }
 
 }
